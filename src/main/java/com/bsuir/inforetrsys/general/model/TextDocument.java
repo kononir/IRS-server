@@ -8,5 +8,9 @@ public class TextDocument {
     private String text;
     private String date;
     private LocalDateTime dateTime;
-    private String path;
+    private String filePath;
+
+    public String getFilePath() {
+        return filePath;
+    }
 }

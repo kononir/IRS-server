@@ -2,6 +2,7 @@
   <dictionary name="Vlad">
     <words>
       <w>lemm</w>
+      <w>sqlserver</w>
     </words>
   </dictionary>
 </component>
