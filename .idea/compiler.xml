@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="IRS-server" />
+        <module name="Information retrieval system" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,8 +1,8 @@
 package com.bsuir.inforetrsys.general.connection;
 
-import com.bsuir.inforetrsys.server.property.FileType;
-import com.bsuir.inforetrsys.server.property.PropertyReader;
-import com.bsuir.inforetrsys.server.property.PropertyReaderException;
+import com.bsuir.inforetrsys.server.data.property.FileType;
+import com.bsuir.inforetrsys.server.data.property.PropertyReader;
+import com.epam.info.handling.data.reader.exception.ReadingException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,7 +22,7 @@ public class ConnectionFactory {
             String password = propertyReader.read(PASSWORD_PROPERTY);
 
             return DriverManager.getConnection(url, user, password);
-        } catch (SQLException | PropertyReaderException e) {
+        } catch (SQLException | ReadingException e) {
             throw new ConnectionFactoryException("Problems with creating connection", e);
         }
     }

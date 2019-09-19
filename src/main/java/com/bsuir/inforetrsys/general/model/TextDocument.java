@@ -6,9 +6,27 @@ public class TextDocument {
     private long id;
     private String title;
     private String text;
-    private String date;
     private LocalDateTime dateTime;
     private String filePath;
+
+    public TextDocument(long id, String title, String text, LocalDateTime dateTime, String filePath) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.dateTime = dateTime;
+        this.filePath = filePath;
+    }
+
+    public TextDocument(String title, String text, LocalDateTime dateTime, String filePath) {
+        this.title = title;
+        this.text = text;
+        this.dateTime = dateTime;
+        this.filePath = filePath;
+    }
+
+    public String getText() {
+        return text;
+    }
 
     public String getFilePath() {
         return filePath;

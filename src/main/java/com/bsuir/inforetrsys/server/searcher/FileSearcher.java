@@ -1,17 +1,29 @@
 package com.bsuir.inforetrsys.server.searcher;
 
+import com.bsuir.inforetrsys.general.service.DocumentService;
+import com.bsuir.inforetrsys.server.api.Searcher;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class FileSearcher {
-    public List<File> searchForNewFiles(String searchingPath, Set<String> indexedDocumentPaths)
+public class FileSearcher implements Searcher {
+    private DocumentService documentService;
+
+    public FileSearcher(DocumentService documentService) {
+        this.documentService = documentService;
+    }
+
+    @Override
+    public List<File> search(String searchingPath)
             throws SearcherException {
         File searchingDir = new File(searchingPath);
         if (!searchingDir.exists() || !searchingDir.isDirectory()) {
             throw new SearcherException("Illegal dir path");
         }
+
+        Set<String> indexedDocumentPaths = documentService.getAllIndexedDocumentPaths();
 
         return searchRecursively(searchingDir, indexedDocumentPaths);
     }

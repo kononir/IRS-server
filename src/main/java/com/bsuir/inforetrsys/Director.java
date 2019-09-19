@@ -1,13 +1,18 @@
 package com.bsuir.inforetrsys;
 
+import com.bsuir.inforetrsys.general.model.TextDocument;
 import com.bsuir.inforetrsys.general.service.DocumentService;
-import com.bsuir.inforetrsys.server.property.FileType;
-import com.bsuir.inforetrsys.server.property.PropertyReader;
-import com.bsuir.inforetrsys.server.property.PropertyReaderException;
-import com.bsuir.inforetrsys.server.searcher.FileSearcher;
+import com.bsuir.inforetrsys.server.api.Indexer;
+import com.bsuir.inforetrsys.server.api.Searcher;
+import com.bsuir.inforetrsys.server.api.WordsParser;
 import com.bsuir.inforetrsys.server.searcher.SearcherException;
+import com.epam.info.handling.data.reader.TextReader;
+import com.epam.info.handling.data.reader.exception.InvalidPathException;
+import com.epam.info.handling.data.reader.exception.ReadingException;
 
 import java.io.File;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
@@ -15,45 +20,60 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class Director {
-    private static final String APP_PROPERTIES_FILE_PATH = "src/main/app.properties";
     private static final int INITIAL_DELAY = 0;
 
-    private FileSearcher fileSearcher;
-    private DocumentService documentService;
+    private TextReader propertyReader;
+    private Searcher fileSearcher;
+    private TextReader documentReader;
+    private Indexer indexer;
 
-    public Director(FileSearcher fileSearcher, DocumentService documentService) {
+    public Director(TextReader propertyReader, Searcher fileSearcher, TextReader documentReader, Indexer indexer) {
+        this.propertyReader = propertyReader;
         this.fileSearcher = fileSearcher;
-        this.documentService = documentService;
+        this.documentReader = documentReader;
+        this.indexer = indexer;
     }
 
     public void handle() {
-        /* Getting options from .properties or .json files:
-        searching path, refreshing time, key words preferred number, db options */
-        PropertyReader reader = new PropertyReader(FileType.EXTERNAL, APP_PROPERTIES_FILE_PATH);
         try {
-            String searchingPath = reader.read("searching.path");
-            long refreshingTime = Long.parseLong(reader.read("refreshing.time"));
-            int keywordsNumber = Integer.parseInt(reader.read("keywords.number"));
+            /* Getting options from .properties or .json files:
+            searching path, refreshing time, key words preferred number, db options */
+            String searchingPath = propertyReader.read("searching.path");
+            long refreshingTime = Long.parseLong(propertyReader.read("refreshing.time"));
+            int keywordsNumber = Integer.parseInt(propertyReader.read("keywords.number"));
 
             ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
             executorService.scheduleAtFixedRate(() -> {
                 try {
                     /* Searching of new files (comparison with indexed files information) */
-                    Set<String> indexedDocumentPaths = documentService.getAllIndexedDocumentPaths();
-                    List<File> newFiles = fileSearcher.searchForNewFiles(searchingPath, indexedDocumentPaths);
+                    List<File> newFiles = fileSearcher.search(searchingPath);
 
                     /* Searching old ones */
 
-                    /* Parsing founded documents, creating search patterns of its */
+                    /* Reading founded documents */
+                    List<TextDocument> documents = new ArrayList<>();
+                    for (File newFile : newFiles) {
+                        documents.add(new TextDocument(
+                                newFile.getName(),
+                                documentReader.read(newFile.getAbsolutePath()),
+                                LocalDateTime.now(),
+                                newFile.getAbsolutePath()
+                        ));
+                    }
 
-                    /* Updating indexed files with new information */
+                    /* Indexing founded documents (parsing, creating search patterns of its, adding to db) */
+                    for (TextDocument document : documents) {
+                        boolean isIndexed = indexer.index(document, keywordsNumber);
+                    }
 
-                } catch (SearcherException e) {
+                    /* Deleting old files */
+
+                } catch (SearcherException | InvalidPathException | ReadingException e) {
                     e.printStackTrace();
                 }
 
             }, INITIAL_DELAY, refreshingTime, TimeUnit.SECONDS);
-        } catch (PropertyReaderException e) {
+        } catch (InvalidPathException | ReadingException e) {
             e.printStackTrace();
         }
     }

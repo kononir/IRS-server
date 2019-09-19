@@ -1,9 +1,12 @@
-package com.bsuir.inforetrsys.server.property;
+package com.bsuir.inforetrsys.server.data.property;
+
+import com.epam.info.handling.data.reader.TextReader;
+import com.epam.info.handling.data.reader.exception.ReadingException;
 
 import java.io.*;
 import java.util.Properties;
 
-public class PropertyReader {
+public class PropertyReader implements TextReader {
     private FileType fileType;
     private String filePath;
 
@@ -12,7 +15,7 @@ public class PropertyReader {
         this.filePath = filePath;
     }
 
-    public String read(String propertyName) throws PropertyReaderException {
+    public String read(String propertyName) throws ReadingException {
         try {
             InputStream stream;
             switch (fileType) {
@@ -31,7 +34,7 @@ public class PropertyReader {
 
             return properties.getProperty(propertyName);
         } catch (IOException e) {
-            throw new PropertyReaderException("Error when read property with name " + propertyName, e);
+            throw new ReadingException("Error when read property with name " + propertyName, e);
         }
     }
 }
