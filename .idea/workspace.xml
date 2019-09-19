@@ -2,23 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Information retrieval system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Searcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/WordsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/AdaptiveWordsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/TextDocumentIndexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/repository/SqlSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/service/DocumentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/service/KeywordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/model/Keyword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/KeywordRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/KeywordsWithValueSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/LastDocumentSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/DocumentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/KeywordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/HighestWeightComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Director.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/app.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/Director.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/model/TextDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/model/TextDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/DocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/SqlSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/impl/AllDocumentsSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/AllDocumentsSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/DocumentService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/DocumentActions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/property/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/property/FileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/property/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/property/PropertyReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/property/PropertyReaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/property/PropertyReaderException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/AdaptiveWordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/AdaptiveWordsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/TextDocumentIndexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/FileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/FileSearcher.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,12 +55,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1345" />
-    <option name="height" value="688" />
-  </component>
   <component name="ProjectId" id="1R39fiMWvxydh5u9XzQWjZH07el" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -81,6 +81,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Programs\Information retrieval system" />
+      <recent name="D:\My Programs\Information retrieval system\src" />
       <recent name="D:\My Programs\Information retrieval system\src\main" />
     </key>
   </component>
@@ -125,7 +127,7 @@
       <workItem from="1568885058673" duration="272000" />
       <workItem from="1568885422719" duration="128000" />
       <workItem from="1568885618114" duration="2326000" />
-      <workItem from="1568888059020" duration="1766000" />
+      <workItem from="1568888059020" duration="14675000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568844989733</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Wrote WordParser and Indexer structure">
+      <created>1568898800303</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568898800303</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +180,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Updating PropertyReader class + wrote scheduling" />
     <MESSAGE value="Wrote FileSearcher with method of searching new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote FileSearcher with method of searching new files" />
+    <MESSAGE value="Wrote WordParser and Indexer structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote WordParser and Indexer structure" />
   </component>
 </project>

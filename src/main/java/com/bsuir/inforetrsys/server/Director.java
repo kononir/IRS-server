@@ -1,10 +1,8 @@
-package com.bsuir.inforetrsys;
+package com.bsuir.inforetrsys.server;
 
 import com.bsuir.inforetrsys.general.model.TextDocument;
-import com.bsuir.inforetrsys.general.service.DocumentService;
 import com.bsuir.inforetrsys.server.api.Indexer;
 import com.bsuir.inforetrsys.server.api.Searcher;
-import com.bsuir.inforetrsys.server.api.WordsParser;
 import com.bsuir.inforetrsys.server.searcher.SearcherException;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.InvalidPathException;
@@ -14,7 +12,6 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -63,7 +60,7 @@ public class Director {
 
                     /* Indexing founded documents (parsing, creating search patterns of its, adding to db) */
                     for (TextDocument document : documents) {
-                        boolean isIndexed = indexer.index(document, keywordsNumber);
+                        indexer.index(document, keywordsNumber);
                     }
 
                     /* Deleting old files */

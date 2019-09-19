@@ -1,6 +1,7 @@
 package com.bsuir.inforetrsys.server.searcher;
 
-import com.bsuir.inforetrsys.general.service.DocumentService;
+import com.bsuir.inforetrsys.general.api.service.DocumentService;
+import com.bsuir.inforetrsys.general.service.DocumentServiceImpl;
 import com.bsuir.inforetrsys.server.api.Searcher;
 
 import java.io.File;

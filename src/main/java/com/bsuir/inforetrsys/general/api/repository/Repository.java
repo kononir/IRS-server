@@ -1,6 +1,4 @@
-package com.bsuir.inforetrsys.general.repository;
-
-import com.bsuir.inforetrsys.general.repository.specification.SqlSpecification;
+package com.bsuir.inforetrsys.general.api.repository;
 
 import java.util.List;
 

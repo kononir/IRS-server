@@ -1,8 +1,9 @@
-package com.bsuir.inforetrsys.general.repository;
+package com.bsuir.inforetrsys.general.repository.impl;
 
+import com.bsuir.inforetrsys.general.api.repository.Repository;
 import com.bsuir.inforetrsys.general.connection.ConnectionPool;
 import com.bsuir.inforetrsys.general.model.TextDocument;
-import com.bsuir.inforetrsys.general.repository.specification.SqlSpecification;
+import com.bsuir.inforetrsys.general.api.repository.SqlSpecification;
 
 import java.sql.Connection;
 import java.util.List;

@@ -3,13 +3,13 @@ package com.bsuir.inforetrsys.general.model;
 import java.time.LocalDateTime;
 
 public class TextDocument {
-    private long id;
+    private int id;
     private String title;
     private String text;
     private LocalDateTime dateTime;
     private String filePath;
 
-    public TextDocument(long id, String title, String text, LocalDateTime dateTime, String filePath) {
+    public TextDocument(int id, String title, String text, LocalDateTime dateTime, String filePath) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -22,6 +22,10 @@ public class TextDocument {
         this.text = text;
         this.dateTime = dateTime;
         this.filePath = filePath;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getText() {
