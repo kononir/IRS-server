@@ -1,8 +1,9 @@
 package com.bsuir.inforetrsys.server;
 
-import com.bsuir.inforetrsys.general.model.TextDocument;
+import com.bsuir.inforetrsys.general.entity.TextDocument;
 import com.bsuir.inforetrsys.server.api.Indexer;
 import com.bsuir.inforetrsys.server.api.Searcher;
+import com.bsuir.inforetrsys.server.logic.IndexingProblemsException;
 import com.bsuir.inforetrsys.server.searcher.SearcherException;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.InvalidPathException;
@@ -65,8 +66,9 @@ public class Director {
 
                     /* Deleting old files */
 
-                } catch (SearcherException | InvalidPathException | ReadingException e) {
+                } catch (SearcherException | InvalidPathException | ReadingException | IndexingProblemsException e) {
                     e.printStackTrace();
+                    executorService.shutdown();
                 }
 
             }, INITIAL_DELAY, refreshingTime, TimeUnit.SECONDS);

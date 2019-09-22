@@ -1,16 +1,17 @@
 package com.bsuir.inforetrsys.server;
 
-import com.bsuir.inforetrsys.general.api.service.DocumentService;
-import com.bsuir.inforetrsys.general.api.service.KeywordService;
+import com.bsuir.inforetrsys.general.api.DocumentService;
+import com.bsuir.inforetrsys.general.api.KeywordService;
 import com.bsuir.inforetrsys.general.service.DocumentServiceImpl;
 import com.bsuir.inforetrsys.general.service.KeywordServiceImpl;
 import com.bsuir.inforetrsys.server.api.Indexer;
 import com.bsuir.inforetrsys.server.api.Searcher;
+import com.bsuir.inforetrsys.server.data.reader.JSONReader;
 import com.bsuir.inforetrsys.server.logic.TextDocumentIndexer;
 import com.bsuir.inforetrsys.server.data.AdaptiveWordsParser;
 import com.bsuir.inforetrsys.server.api.WordsParser;
-import com.bsuir.inforetrsys.server.data.property.FileType;
-import com.bsuir.inforetrsys.server.data.property.PropertyReader;
+import com.bsuir.inforetrsys.server.data.reader.FileType;
+import com.bsuir.inforetrsys.server.data.reader.PropertyReader;
 import com.bsuir.inforetrsys.server.searcher.FileSearcher;
 import com.epam.info.handling.data.parser.Parser;
 import com.epam.info.handling.data.parser.builder.impl.ParserChainBuilder;
@@ -31,7 +32,7 @@ public class Runner {
         WordsParser wordsParser = new AdaptiveWordsParser(parser);
 
         KeywordService keywordService = new KeywordServiceImpl();
-        Indexer indexer = new TextDocumentIndexer(wordsParser, documentService, keywordService);
+        Indexer indexer = new TextDocumentIndexer(wordsParser,  documentService, keywordService);
 
         Director director = new Director(propertyReader, fileSearcher, documentReader, indexer);
         director.handle();

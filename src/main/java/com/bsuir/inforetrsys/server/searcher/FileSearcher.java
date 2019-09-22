@@ -1,8 +1,8 @@
 package com.bsuir.inforetrsys.server.searcher;
 
-import com.bsuir.inforetrsys.general.api.service.DocumentService;
-import com.bsuir.inforetrsys.general.service.DocumentServiceImpl;
+import com.bsuir.inforetrsys.general.api.DocumentService;
 import com.bsuir.inforetrsys.server.api.Searcher;
+import com.epam.cafe.service.ServiceException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -24,9 +24,12 @@ public class FileSearcher implements Searcher {
             throw new SearcherException("Illegal dir path");
         }
 
-        Set<String> indexedDocumentPaths = documentService.getAllIndexedDocumentPaths();
-
-        return searchRecursively(searchingDir, indexedDocumentPaths);
+        try {
+            Set<String> indexedDocumentPaths = documentService.getAllIndexedDocumentPaths();
+            return searchRecursively(searchingDir, indexedDocumentPaths);
+        } catch (ServiceException e) {
+            throw new SearcherException("Search problems", e);
+        }
     }
 
     private List<File> searchRecursively(File searchingDir, Set<String> indexedDocumentPaths) {
@@ -39,7 +42,7 @@ public class FileSearcher implements Searcher {
                     newFiles.addAll(searchRecursively(file, indexedDocumentPaths));
                 } else {
                     /* searching file name in indexed files */
-                    if (indexedDocumentPaths.contains(file.getAbsolutePath())) {
+                    if (!indexedDocumentPaths.contains(file.getAbsolutePath())) {
                         newFiles.add(file);
                     }
                 }

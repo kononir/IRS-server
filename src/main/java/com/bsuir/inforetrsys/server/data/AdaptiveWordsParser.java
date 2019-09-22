@@ -6,7 +6,6 @@ import com.epam.info.handling.data.composite.impl.lexeme.Lexeme;
 import com.epam.info.handling.data.parser.Parser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

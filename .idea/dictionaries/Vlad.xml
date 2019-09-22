@@ -2,7 +2,12 @@
   <dictionary name="Vlad">
     <words>
       <w>lemm</w>
+      <w>limonad</w>
+      <w>mssqlserver</w>
       <w>sqlserver</w>
+      <w>stopword</w>
+      <w>stopwords</w>
+      <w>transportations</w>
     </words>
   </dictionary>
 </component>

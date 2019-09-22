@@ -1,4 +1,4 @@
-package com.bsuir.inforetrsys.server.data.property;
+package com.bsuir.inforetrsys.server.data.reader;
 
 public enum FileType {
     INTERNAL,

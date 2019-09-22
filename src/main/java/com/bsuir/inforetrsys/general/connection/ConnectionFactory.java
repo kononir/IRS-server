@@ -1,10 +1,12 @@
 package com.bsuir.inforetrsys.general.connection;
 
-import com.bsuir.inforetrsys.server.data.property.FileType;
-import com.bsuir.inforetrsys.server.data.property.PropertyReader;
+import com.bsuir.inforetrsys.server.data.reader.FileType;
+import com.bsuir.inforetrsys.server.data.reader.PropertyReader;
 import com.epam.info.handling.data.reader.exception.ReadingException;
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -16,7 +18,10 @@ public class ConnectionFactory {
 
     public Connection create() throws ConnectionFactoryException {
         try {
-            PropertyReader propertyReader = new PropertyReader(FileType.INTERNAL, DATABASE_PROPERTIES_PATH);
+            Driver driver = new SQLServerDriver();
+            DriverManager.registerDriver(driver);
+
+            PropertyReader propertyReader = new PropertyReader(FileType.EXTERNAL, DATABASE_PROPERTIES_PATH);
             String url = propertyReader.read(URL_PROPERTY);
             String user = propertyReader.read(USER_PROPERTY);
             String password = propertyReader.read(PASSWORD_PROPERTY);

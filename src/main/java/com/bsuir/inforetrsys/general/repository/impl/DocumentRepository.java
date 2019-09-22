@@ -1,37 +1,40 @@
 package com.bsuir.inforetrsys.general.repository.impl;
 
-import com.bsuir.inforetrsys.general.api.repository.Repository;
 import com.bsuir.inforetrsys.general.connection.ConnectionPool;
-import com.bsuir.inforetrsys.general.model.TextDocument;
-import com.bsuir.inforetrsys.general.api.repository.SqlSpecification;
+import com.bsuir.inforetrsys.general.entity.TextDocument;
+import com.bsuir.inforetrsys.general.entity.builder.DocumentBuilder;
+import com.epam.cafe.api.repository.specification.SqlSpecification;
+import com.epam.cafe.repository.RepositoryException;
+import com.epam.cafe.repository.impl.AbstractRepository;
 
-import java.sql.Connection;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
-public class DocumentRepository implements Repository<TextDocument> {
-    private Connection connection;
-    {
-        ConnectionPool pool = ConnectionPool.getInstance();
-        connection = pool.getConnection();
+public class DocumentRepository extends AbstractRepository<TextDocument> {
+    private static final String TABLE_NAME = "irs_schema.document";
+
+    public DocumentRepository() {
+        super(ConnectionPool.getInstance().getConnection());
     }
 
     @Override
-    public void save(TextDocument element) {
-
+    protected String getTableName() {
+        return TABLE_NAME;
     }
 
     @Override
-    public void update(TextDocument element) {
-
+    protected Map<String, Object> getParams(TextDocument document) {
+        Map<String, Object> params = new LinkedHashMap<>();
+        params.put(TextDocument.ID_COLUMN, document.getId());
+        params.put(TextDocument.TITLE_COLUMN, document.getTitle());
+        params.put(TextDocument.ADDING_TIME_COLUMN, document.getAddingTime());
+        params.put(TextDocument.FILEPATH_COLUMN, document.getFilePath());
+        return params;
     }
 
     @Override
-    public void remove(TextDocument element) {
-
-    }
-
-    @Override
-    public List<TextDocument> query(SqlSpecification specification) {
-        return null;
+    public List<TextDocument> query(SqlSpecification specification) throws RepositoryException {
+        return super.executeQuery(specification, new DocumentBuilder());
     }
 }
