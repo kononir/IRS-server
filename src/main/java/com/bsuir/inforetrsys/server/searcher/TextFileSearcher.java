@@ -1,7 +1,6 @@
 package com.bsuir.inforetrsys.server.searcher;
 
 import com.bsuir.inforetrsys.general.api.DocumentService;
-import com.bsuir.inforetrsys.server.api.Searcher;
 import com.epam.cafe.service.ServiceException;
 
 import java.io.File;
@@ -9,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class FileSearcher implements Searcher {
+public class TextFileSearcher implements com.bsuir.inforetrsys.server.api.FileSearcher {
     private DocumentService documentService;
 
-    public FileSearcher(DocumentService documentService) {
+    public TextFileSearcher(DocumentService documentService) {
         this.documentService = documentService;
     }
 

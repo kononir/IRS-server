@@ -1,4 +1,4 @@
-package com.bsuir.inforetrsys.server.data;
+package com.bsuir.inforetrsys.general.parser;
 
 import com.bsuir.inforetrsys.server.api.WordsParser;
 import com.epam.info.handling.data.composite.Component;

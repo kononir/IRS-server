@@ -1,12 +1,12 @@
-package com.bsuir.inforetrsys.server.logic;
+package com.bsuir.inforetrsys.server.indexer;
 
 import com.bsuir.inforetrsys.general.api.DocumentService;
 import com.bsuir.inforetrsys.general.api.KeywordService;
+import com.bsuir.inforetrsys.general.api.StopwordService;
 import com.bsuir.inforetrsys.general.entity.Keyword;
 import com.bsuir.inforetrsys.general.entity.TextDocument;
 import com.bsuir.inforetrsys.server.api.Indexer;
 import com.bsuir.inforetrsys.server.api.WordsParser;
-import com.bsuir.inforetrsys.server.data.reader.JSONReader;
 import com.epam.cafe.service.ServiceException;
 
 import java.util.Collections;
@@ -16,26 +16,17 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class TextDocumentIndexer implements Indexer {
-    private static final String STOPWORDS_PATH = "stopwords.json";
-
-    private List<String> stopwords;
-
     private WordsParser wordsParser;
     private DocumentService documentService;
     private KeywordService keywordService;
+    private StopwordService stopwordService;
 
     public TextDocumentIndexer(WordsParser wordsParser, DocumentService documentService,
-                               KeywordService keywordService) {
+                               KeywordService keywordService, StopwordService stopwordService) {
         this.wordsParser = wordsParser;
         this.documentService = documentService;
         this.keywordService = keywordService;
-
-        loadStopWords();
-    }
-
-    private void loadStopWords() {
-        JSONReader reader = new JSONReader();
-        stopwords = reader.read(STOPWORDS_PATH);
+        this.stopwordService = stopwordService;
     }
 
     @Override
@@ -49,9 +40,7 @@ public class TextDocumentIndexer implements Indexer {
             int documentId = documentService.getLastDocumentId();
 
             for (String keywordValue : keywordValues) {
-                if (keywordService.getNumberOfDocumentsWithWord(keywordValue) == 0) {
-                    keywordService.addKeyword(new Keyword(keywordValue, documentId));
-                }
+                keywordService.addKeyword(new Keyword(keywordValue, documentId));
             }
         } catch (ServiceException e) {
             throw new IndexingProblemsException(e);
@@ -63,7 +52,7 @@ public class TextDocumentIndexer implements Indexer {
         Map<String, Double> wordsWithWeights = new HashMap<>();
 
         for (String wordValue : allWordsValues) {
-            if (!wordsWithWeights.containsKey(wordValue) && !stopwordsContainsIgnoreCase(wordValue)) {
+            if (!wordsWithWeights.containsKey(wordValue) && !stopwordService.containsIgnoreCase(wordValue)) {
                 int documentsWithWordNumber = keywordService.getNumberOfDocumentsWithWord(wordValue);
                 double wordInverseFrequency = calculateWordInverseFrequency(documentsNumber, documentsWithWordNumber);
                 int wordFrequencyInDocument = getWordFrequencyInDocument(wordValue, allWordsValues);
@@ -76,11 +65,6 @@ public class TextDocumentIndexer implements Indexer {
         List<String> sortedWordValues = getWordsSortedByWeight(wordsWithWeights);
 
         return sortedWordValues.subList(0, keywordsNumber);
-    }
-
-    private boolean stopwordsContainsIgnoreCase(String wordValue) {
-        return stopwords.stream()
-                .anyMatch(s -> s.equalsIgnoreCase(wordValue));
     }
 
     private double calculateWordInverseFrequency(int documentsNumber, int documentsWithWordNumber) {

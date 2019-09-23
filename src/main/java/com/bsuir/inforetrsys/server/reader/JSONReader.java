@@ -1,6 +1,5 @@
-package com.bsuir.inforetrsys.server.data.reader;
+package com.bsuir.inforetrsys.server.reader;
 
-import com.epam.info.handling.data.reader.exception.ReadingException;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

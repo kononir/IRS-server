@@ -14,14 +14,18 @@ public class KeywordServiceImpl implements KeywordService {
 
     @Override
     public int getNumberOfDocumentsWithWord(String wordValue) throws ServiceException {
-        int numberOfDocumentsWithWord;
+        return getKeywordRelationsWithValue(wordValue).size();
+    }
+
+    @Override
+    public List<Keyword> getKeywordRelationsWithValue(String wordValue) throws ServiceException {
+        List<Keyword> sameKeywords;
         try {
-            List<Keyword> sameKeywords = repository.query(new KeywordsWithValueSpecification(wordValue));
-            numberOfDocumentsWithWord = sameKeywords.size();
+            sameKeywords = repository.query(new KeywordsWithValueSpecification(wordValue));
         } catch (RepositoryException e) {
-            throw new ServiceException("Problems with getting number of documents with word '" + wordValue + "'", e);
+            throw new ServiceException("Problems with getting keyword relations with word value '" + wordValue + "'", e);
         }
-        return numberOfDocumentsWithWord;
+        return sameKeywords;
     }
 
     @Override

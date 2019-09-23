@@ -2,8 +2,8 @@ package com.bsuir.inforetrsys.server;
 
 import com.bsuir.inforetrsys.general.entity.TextDocument;
 import com.bsuir.inforetrsys.server.api.Indexer;
-import com.bsuir.inforetrsys.server.api.Searcher;
-import com.bsuir.inforetrsys.server.logic.IndexingProblemsException;
+import com.bsuir.inforetrsys.server.api.FileSearcher;
+import com.bsuir.inforetrsys.server.indexer.IndexingProblemsException;
 import com.bsuir.inforetrsys.server.searcher.SearcherException;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.InvalidPathException;
@@ -17,15 +17,18 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class Director {
+public class ServerDirector {
     private static final int INITIAL_DELAY = 0;
 
     private TextReader propertyReader;
-    private Searcher fileSearcher;
+    private FileSearcher fileSearcher;
     private TextReader documentReader;
     private Indexer indexer;
 
-    public Director(TextReader propertyReader, Searcher fileSearcher, TextReader documentReader, Indexer indexer) {
+    ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
+
+    public ServerDirector(TextReader propertyReader, FileSearcher fileSearcher,
+                          TextReader documentReader, Indexer indexer) {
         this.propertyReader = propertyReader;
         this.fileSearcher = fileSearcher;
         this.documentReader = documentReader;
@@ -40,7 +43,6 @@ public class Director {
             long refreshingTime = Long.parseLong(propertyReader.read("refreshing.time"));
             int keywordsNumber = Integer.parseInt(propertyReader.read("keywords.number"));
 
-            ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
             executorService.scheduleAtFixedRate(() -> {
                 try {
                     /* Searching of new files (comparison with indexed files information) */
@@ -75,5 +77,9 @@ public class Director {
         } catch (InvalidPathException | ReadingException e) {
             e.printStackTrace();
         }
+    }
+
+    public void stop() {
+        executorService.shutdown();
     }
 }

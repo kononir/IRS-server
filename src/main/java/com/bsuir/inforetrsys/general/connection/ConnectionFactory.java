@@ -1,7 +1,7 @@
 package com.bsuir.inforetrsys.general.connection;
 
-import com.bsuir.inforetrsys.server.data.reader.FileType;
-import com.bsuir.inforetrsys.server.data.reader.PropertyReader;
+import com.bsuir.inforetrsys.server.reader.FileType;
+import com.bsuir.inforetrsys.server.reader.PropertyReader;
 import com.epam.info.handling.data.reader.exception.ReadingException;
 import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 

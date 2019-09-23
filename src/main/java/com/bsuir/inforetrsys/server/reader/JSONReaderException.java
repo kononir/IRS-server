@@ -1,4 +1,4 @@
-package com.bsuir.inforetrsys.server.data.reader;
+package com.bsuir.inforetrsys.server.reader;
 
 public class JSONReaderException extends RuntimeException {
     public JSONReaderException(String message, Throwable cause) {

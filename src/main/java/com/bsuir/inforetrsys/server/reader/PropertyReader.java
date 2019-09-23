@@ -1,4 +1,4 @@
-package com.bsuir.inforetrsys.server.data.reader;
+package com.bsuir.inforetrsys.server.reader;
 
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.ReadingException;
