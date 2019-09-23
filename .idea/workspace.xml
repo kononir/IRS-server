@@ -1,36 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Wrote client (query searcher + ui); fixed bugs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/api/QuerySearcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/entity/SearchResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/QueryParserChainBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/LogicSearcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/QuerySearchingProblemsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/StopwordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/StopwordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Wrote snippet searching; added russian stopwords; rewrote SearchResult">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/SnippetSearcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/SnippetSearcherImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/DocumentByIdSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/search_result.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/LogicSearching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/ClientRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/KeywordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/KeywordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/KeywordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/KeywordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/ServerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/Runner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Searcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/FileSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/AdaptiveWordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/parser/AdaptiveWordsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/reader/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/FileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/reader/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/reader/JSONReaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReaderException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/data/reader/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/PropertyReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/IndexingProblemsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/IndexingProblemsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/logic/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/TextDocumentIndexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/FileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/TextFileSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/ClientRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/api/QuerySearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/QuerySearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/entity/SearchResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/QueryParserChainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/QueryParserChainBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/LogicSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/QuerySearchingProblemsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/QuerySearchingProblemsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/KeywordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/KeywordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/StopwordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/StopwordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionFactoryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/Keyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/Keyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/TextDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/TextDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/builder/DocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/builder/DocumentBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/builder/KeywordBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/builder/KeywordBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/parser/AdaptiveWordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/AdaptiveWordsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/impl/DocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/KeywordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/impl/KeywordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/document/AllDocumentsSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/AllDocumentsSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/document/LastDocumentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/LastDocumentSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/keyword/KeywordsWithValueSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/keyword/KeywordsWithValueSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/DocumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/KeywordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/KeywordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/StopwordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/ServerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/FileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/data/FileSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/Indexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/WordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/data/WordsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/IndexingProblemsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/IndexingProblemsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/FileType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/JSONReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/JSONReaderException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/PropertyReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/SearcherException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/searcher/SearcherException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/TextFileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/searcher/TextFileSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stopwords.json" beforeDir="false" afterPath="$PROJECT_DIR$/stopwords.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +107,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -105,8 +124,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1R39fiMWvxydh5u9XzQWjZH07el" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -115,6 +137,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -153,27 +176,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientRunner">
-    <configuration name="ClientRunner" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.bsuir.inforetrsys.client.ClientRunner" />
+  <component name="RunManager">
+    <configuration name="Runner" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.bsuir.inforetrsys.Runner" />
       <module name="Information retrieval system" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerRunner" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_144\jre" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.bsuir.inforetrsys.server.ServerRunner" />
-      <module name="Information retrieval system" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.ClientRunner" />
-      <item itemvalue="Application.ServerRunner" />
-    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -183,11 +193,6 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f1a88270" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f1a88270" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@45be4c3f" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -222,7 +227,7 @@
       <workItem from="1569057277967" duration="15869000" />
       <workItem from="1569167683333" duration="2525000" />
       <workItem from="1569170330685" duration="14290000" />
-      <workItem from="1569191344761" duration="17050000" />
+      <workItem from="1569191344761" duration="26929000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -266,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569192620699</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Wrote client (query searcher + ui); fixed bugs">
+      <created>1569258693063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569258693063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +298,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Updating PropertyReader class + wrote scheduling" />
     <MESSAGE value="Wrote FileSearcher with method of searching new files" />
@@ -293,18 +306,8 @@
     <MESSAGE value="Implemented AdaptiveWordParser and TextDocumentIndexer; added api" />
     <MESSAGE value="Wrote entity builders, repo specifications, sql scripts; added stopwords&#10;and json reader; fixed bugs" />
     <MESSAGE value="Wrote client (query searcher + ui); fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote client (query searcher + ui); fixed bugs" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/LogicSearcher.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Wrote snippet searching; added russian stopwords; rewrote SearchResult" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote snippet searching; added russian stopwords; rewrote SearchResult" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Information_retrieval_system$ClientRunner.ic" NAME="ClientRunner Coverage Results" MODIFIED="1569245116074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

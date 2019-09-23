@@ -3,8 +3,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bsuir.inforetrsys.client.MainController"
-      spacing="10" alignment="CENTER">
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.bsuir.inforetrsys.MainController"
+      prefHeight="400.0" prefWidth="600.0"
+      spacing="10"
+      alignment="CENTER">
     <Label alignment="TOP_CENTER">
         Please, write query:
     </Label>

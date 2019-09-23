@@ -1,0 +1,100 @@
+package com.bsuir.inforetrsys.logic.searcher;
+
+import com.bsuir.inforetrsys.api.logic.QuerySearcher;
+import com.bsuir.inforetrsys.api.logic.SnippetSearcher;
+import com.bsuir.inforetrsys.api.service.DocumentService;
+import com.bsuir.inforetrsys.api.service.KeywordService;
+import com.bsuir.inforetrsys.api.service.StopwordService;
+import com.bsuir.inforetrsys.entity.Keyword;
+import com.bsuir.inforetrsys.entity.SearchResult;
+import com.bsuir.inforetrsys.entity.TextDocument;
+import com.bsuir.inforetrsys.api.data.WordsParser;
+import com.epam.cafe.service.ServiceException;
+import com.epam.info.handling.data.reader.TextReader;
+import com.epam.info.handling.data.reader.exception.InvalidPathException;
+import com.epam.info.handling.data.reader.exception.ReadingException;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class LogicSearcher implements QuerySearcher {
+    private WordsParser wordsParser;
+    private KeywordService keywordService;
+    private StopwordService stopwordService;
+    private DocumentService documentService;
+    private TextReader documentReader;
+    private SnippetSearcher snippetSearcher;
+
+    public LogicSearcher(WordsParser wordsParser, KeywordService keywordService, StopwordService stopwordService,
+                         DocumentService documentService, TextReader documentReader, SnippetSearcher snippetSearcher) {
+        this.wordsParser = wordsParser;
+        this.keywordService = keywordService;
+        this.stopwordService = stopwordService;
+        this.documentService = documentService;
+        this.documentReader = documentReader;
+        this.snippetSearcher = snippetSearcher;
+    }
+
+    @Override
+    public List<SearchResult> search(String query, double minRank) throws QuerySearchingProblemsException {
+        Map<Integer, List<String>> currResult = new HashMap<>();
+        int queryKeywordsNumber;
+
+        try {
+            List<String> queryKeywordValues = wordsParser.parse(query);
+            queryKeywordsNumber = queryKeywordValues.size();
+            for (String queryKeywordValue : queryKeywordValues) {
+                String lowerCaseQueryKeywordValue = queryKeywordValue.toLowerCase();
+
+                if (!stopwordService.containsIgnoreCase(lowerCaseQueryKeywordValue)) {
+                    List<Keyword> keywords = keywordService.getKeywordRelationsWithValue(lowerCaseQueryKeywordValue);
+                    for (Keyword keyword : keywords) {
+                        int currDocumentId = keyword.getDocumentId();
+                        List<String> foundKeywordValues
+                                = currResult.putIfAbsent(currDocumentId, Collections.singletonList(keyword.getValue()));
+                        if (foundKeywordValues != null) {
+                            foundKeywordValues.add(keyword.getValue());
+                        }
+                    }
+                }
+            }
+
+            return getSearchResultsWithRankMoreThan(formSearchResults(currResult, queryKeywordsNumber), minRank);
+        } catch (ServiceException | ReadingException | InvalidPathException e) {
+            throw new QuerySearchingProblemsException(e);
+        }
+    }
+
+    private List<SearchResult> formSearchResults(Map<Integer, List<String>> currResult, int queryKeywordsNumber)
+            throws ServiceException, ReadingException, InvalidPathException {
+        List<SearchResult> searchResults = new ArrayList<>();
+        for (Map.Entry<Integer, List<String>> entry : currResult.entrySet()) {
+            int documentId = entry.getKey();
+            List<String> foundKeywordValues = entry.getValue();
+
+            TextDocument document = documentService.getDocumentById(documentId);
+            String filePath = document.getFilePath();
+            String documentText = documentReader.read(filePath);
+            String documentSnippet = snippetSearcher.search(documentText, foundKeywordValues);
+
+            double documentRank = computeRank(foundKeywordValues.size(), queryKeywordsNumber);
+
+            SearchResult searchResult = new SearchResult(
+                    documentId, document.getTitle(), documentSnippet, documentRank, document.getAddingTime()
+            );
+
+            searchResults.add(searchResult);
+        }
+        return searchResults;
+    }
+
+    private double computeRank(int foundKeywordsNumber, int queryKeywordsNumber) {
+        return (double) foundKeywordsNumber / (double) queryKeywordsNumber;
+    }
+
+    private List<SearchResult> getSearchResultsWithRankMoreThan(List<SearchResult> searchResults, double minRank) {
+        return searchResults.stream()
+                .filter(searchResult -> searchResult.getRank() >= minRank)
+                .collect(Collectors.toList());
+    }
+}
