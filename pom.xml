@@ -12,6 +12,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -33,6 +34,33 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.web</groupId>
+            <artifactId>epam-cafe</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>classes</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>information-handling</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,54 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Wrote snippet searching; added russian stopwords; rewrote SearchResult">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/SnippetSearcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/SnippetSearcherImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/DocumentByIdSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/search_result.fxml" afterDir="false" />
+    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/ClientRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/api/QuerySearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/QuerySearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/entity/SearchResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/QueryParserChainBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/QueryParserChainBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/LogicSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/client/query/searcher/QuerySearchingProblemsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/QuerySearchingProblemsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/DocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/KeywordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/KeywordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/api/StopwordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/service/StopwordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionFactoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionFactoryException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/connection/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/Keyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/Keyword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/TextDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/TextDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/builder/DocumentBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/builder/DocumentBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/entity/builder/KeywordBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/builder/KeywordBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/parser/AdaptiveWordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/AdaptiveWordsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/impl/DocumentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/impl/KeywordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/impl/KeywordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/document/AllDocumentsSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/AllDocumentsSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/document/LastDocumentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/document/LastDocumentSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/repository/specification/keyword/KeywordsWithValueSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/repository/specification/keyword/KeywordsWithValueSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/DocumentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/KeywordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/KeywordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/general/service/StopwordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/ServerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/FileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/data/FileSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/logic/Indexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/api/WordsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/api/data/WordsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/IndexingProblemsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/IndexingProblemsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/indexer/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/FileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/JSONReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/JSONReaderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/JSONReaderException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/reader/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/reader/PropertyReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/SearcherException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/searcher/SearcherException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/server/searcher/TextFileSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/searcher/TextFileSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/SnippetSearcherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/SnippetSearcherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stopwords.json" beforeDir="false" afterPath="$PROJECT_DIR$/stopwords.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/search_result.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,9 +75,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -227,7 +195,8 @@
       <workItem from="1569057277967" duration="15869000" />
       <workItem from="1569167683333" duration="2525000" />
       <workItem from="1569170330685" duration="14290000" />
-      <workItem from="1569191344761" duration="26929000" />
+      <workItem from="1569191344761" duration="55657000" />
+      <workItem from="1569370115413" duration="2438000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -278,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569258693063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Wrote snippet searching; added russian stopwords; rewrote SearchResult">
+      <created>1569277836180</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569277836180</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

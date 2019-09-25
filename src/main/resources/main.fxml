@@ -9,8 +9,8 @@
       spacing="10"
       alignment="CENTER">
     <Label alignment="TOP_CENTER">
-        Please, write query:
+        Type query here
     </Label>
     <TextField fx:id="queryField" alignment="CENTER"/>
-    <Button text="Search" onAction="#handleSearch" alignment="BOTTOM_CENTER"/>
+    <Button text="Search" onAction="#controlSearch" alignment="BOTTOM_CENTER"/>
 </VBox>

@@ -13,7 +13,7 @@ public class StopwordServiceImpl implements StopwordService {
     @Override
     public boolean containsIgnoreCase(String wordValue) {
         return stopwords.stream()
-                .noneMatch(s -> s.equalsIgnoreCase(wordValue));
+                .anyMatch(s -> s.equalsIgnoreCase(wordValue));
     }
 
     private Set<String> load() {

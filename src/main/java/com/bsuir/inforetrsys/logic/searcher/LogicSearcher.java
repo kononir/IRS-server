@@ -50,8 +50,11 @@ public class LogicSearcher implements QuerySearcher {
                     List<Keyword> keywords = keywordService.getKeywordRelationsWithValue(lowerCaseQueryKeywordValue);
                     for (Keyword keyword : keywords) {
                         int currDocumentId = keyword.getDocumentId();
-                        List<String> foundKeywordValues
-                                = currResult.putIfAbsent(currDocumentId, Collections.singletonList(keyword.getValue()));
+
+                        List<String> newKeywordValues = new ArrayList<>();
+                        newKeywordValues.add(keyword.getValue());
+
+                        List<String> foundKeywordValues = currResult.putIfAbsent(currDocumentId, newKeywordValues);
                         if (foundKeywordValues != null) {
                             foundKeywordValues.add(keyword.getValue());
                         }
@@ -80,7 +83,7 @@ public class LogicSearcher implements QuerySearcher {
             double documentRank = computeRank(foundKeywordValues.size(), queryKeywordsNumber);
 
             SearchResult searchResult = new SearchResult(
-                    documentId, document.getTitle(), documentSnippet, documentRank, document.getAddingTime()
+                    document.getTitle(), documentSnippet, documentRank, filePath, document.getAddingTime()
             );
 
             searchResults.add(searchResult);

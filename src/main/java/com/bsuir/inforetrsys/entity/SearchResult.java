@@ -3,22 +3,18 @@ package com.bsuir.inforetrsys.entity;
 import java.time.LocalDateTime;
 
 public class SearchResult {
-    private int documentId;
     private String title;
     private String snippet;
     private double rank;
+    private String filePath;
     private LocalDateTime addingTime;
 
-    public SearchResult(int documentId, String title, String snippet, double rank, LocalDateTime addingTime) {
-        this.documentId = documentId;
+    public SearchResult(String title, String snippet, double rank, String filePath, LocalDateTime addingTime) {
         this.title = title;
         this.snippet = snippet;
         this.rank = rank;
+        this.filePath = filePath;
         this.addingTime = addingTime;
-    }
-
-    public int getDocumentId() {
-        return documentId;
     }
 
     public String getTitle() {
@@ -31,6 +27,10 @@ public class SearchResult {
 
     public double getRank() {
         return rank;
+    }
+
+    public String getFilePath() {
+        return filePath;
     }
 
     public LocalDateTime getAddingTime() {

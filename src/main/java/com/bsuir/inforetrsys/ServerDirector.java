@@ -8,6 +8,8 @@ import com.bsuir.inforetrsys.data.searcher.SearcherException;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.InvalidPathException;
 import com.epam.info.handling.data.reader.exception.ReadingException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -26,6 +28,9 @@ public class ServerDirector {
     private Indexer indexer;
 
     ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
+
+    private static final Logger INFO_LOGGER = LogManager.getLogger(ServerDirector.class);
+    private static final Logger ERROR_LOGGER = LogManager.getLogger();
 
     public ServerDirector(TextReader propertyReader, FileSearcher fileSearcher,
                           TextReader documentReader, Indexer indexer) {
@@ -47,6 +52,7 @@ public class ServerDirector {
             executorService.scheduleAtFixedRate(() -> {
                 try {
                     /* Searching of new files (comparison with indexed files information) */
+                    INFO_LOGGER.info("Search for new files");
                     List<File> newFiles = fileSearcher.search(searchingPath);
 
                     /* Searching old ones */
@@ -54,6 +60,8 @@ public class ServerDirector {
                     /* Reading founded documents */
                     List<TextDocument> documents = new ArrayList<>();
                     for (File newFile : newFiles) {
+                        INFO_LOGGER.info("Found '" + newFile.getAbsolutePath() + "'");
+
                         documents.add(new TextDocument(
                                 newFile.getName(),
                                 documentReader.read(newFile.getAbsolutePath()),
@@ -62,21 +70,24 @@ public class ServerDirector {
                         ));
                     }
 
+                    INFO_LOGGER.info("Index new documents");
+
                     /* Indexing founded documents (parsing, creating search patterns of its, adding to db) */
                     for (TextDocument document : documents) {
                         indexer.index(document, minKeywordWeight, maxKeywordWeight);
+                        INFO_LOGGER.info("Document '" + document.getTitle() + "' indexed");
                     }
 
                     /* Deleting old files */
 
                 } catch (SearcherException | InvalidPathException | ReadingException | IndexingProblemsException e) {
-                    e.printStackTrace();
+                    ERROR_LOGGER.error(e);
                     executorService.shutdown();
                 }
 
             }, INITIAL_DELAY, refreshingTime, TimeUnit.SECONDS);
         } catch (InvalidPathException | ReadingException e) {
-            e.printStackTrace();
+            ERROR_LOGGER.error(e);
         }
     }
 
