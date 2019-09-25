@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Added css to main.fxml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/MainAlert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vlad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/ServerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/data/parser/SnippetSearcherImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/SnippetSearcherImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/entity/SearchResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/service/StopwordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/search_result.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +73,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -107,6 +104,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -196,7 +194,8 @@
       <workItem from="1569167683333" duration="2525000" />
       <workItem from="1569170330685" duration="14290000" />
       <workItem from="1569191344761" duration="55657000" />
-      <workItem from="1569370115413" duration="2438000" />
+      <workItem from="1569370115413" duration="7030000" />
+      <workItem from="1569438632133" duration="13107000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -254,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569277836180</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added search results window, logging to indexer part; solved problems&#10;with indexer (td/idf) and snippet searcher (made case insensitive)">
+      <created>1569402006631</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569402006631</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +289,8 @@
     <MESSAGE value="Wrote entity builders, repo specifications, sql scripts; added stopwords&#10;and json reader; fixed bugs" />
     <MESSAGE value="Wrote client (query searcher + ui); fixed bugs" />
     <MESSAGE value="Wrote snippet searching; added russian stopwords; rewrote SearchResult" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote snippet searching; added russian stopwords; rewrote SearchResult" />
+    <MESSAGE value="Added search results window, logging to indexer part; solved problems&#10;with indexer (td/idf) and snippet searcher (made case insensitive)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added search results window, logging to indexer part; solved problems&#10;with indexer (td/idf) and snippet searcher (made case insensitive)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Information_retrieval_system$ClientRunner.ic" NAME="ClientRunner Coverage Results" MODIFIED="1569245116074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

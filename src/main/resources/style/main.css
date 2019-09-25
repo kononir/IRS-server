@@ -1,0 +1,53 @@
+#root-pane {
+    -fx-pref-height: 400px;
+    -fx-pref-width: 600px;
+    -fx-font-size: 15px;
+}
+
+#search-vbox {
+    -fx-spacing: 10px;
+}
+
+#min-rank-hbox {
+    -fx-spacing: 5px;
+    -fx-padding: 5px;
+}
+
+#query-field {
+    -fx-max-width: 500px;
+}
+
+#min-rank-field {
+    -fx-max-width: 50px;
+}
+
+/* search results window */
+#results-grid-pane {
+    -fx-padding: 10px;
+    -fx-hgap: 10px;
+    -fx-vgap: 20px;
+}
+
+#title-label, #snippet-label, #file-path-label, #adding-time-label {
+    -fx-wrap-text: true;
+}
+
+#title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+#file-path-label {
+    -fx-text-fill: green;
+}
+
+#snippet-label {
+    -fx-pref-width: 800px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+
+#rank-label {
+    -fx-font-size: 20px;
+}
+

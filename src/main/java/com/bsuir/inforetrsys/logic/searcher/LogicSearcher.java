@@ -62,7 +62,12 @@ public class LogicSearcher implements QuerySearcher {
                 }
             }
 
-            return getSearchResultsWithRankMoreThan(formSearchResults(currResult, queryKeywordsNumber), minRank);
+            List<SearchResult> searchResultsWithSomeRank
+                    = getSearchResultsWithRankMoreThan(formSearchResults(currResult, queryKeywordsNumber), minRank);
+
+            searchResultsWithSomeRank.sort(Collections.reverseOrder());
+
+            return searchResultsWithSomeRank;
         } catch (ServiceException | ReadingException | InvalidPathException e) {
             throw new QuerySearchingProblemsException(e);
         }

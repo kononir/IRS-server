@@ -8,20 +8,21 @@ import com.bsuir.inforetrsys.api.service.KeywordService;
 import com.bsuir.inforetrsys.api.service.StopwordService;
 import com.bsuir.inforetrsys.data.parser.AdaptiveWordsParser;
 import com.bsuir.inforetrsys.data.parser.QueryParserChainBuilder;
-import com.bsuir.inforetrsys.logic.searcher.SnippetSearcherImpl;
 import com.bsuir.inforetrsys.entity.SearchResult;
 import com.bsuir.inforetrsys.logic.searcher.LogicSearcher;
 import com.bsuir.inforetrsys.logic.searcher.QuerySearchingProblemsException;
+import com.bsuir.inforetrsys.logic.searcher.SnippetSearcherImpl;
 import com.bsuir.inforetrsys.service.DocumentServiceImpl;
 import com.bsuir.inforetrsys.service.KeywordServiceImpl;
 import com.bsuir.inforetrsys.service.StopwordServiceImpl;
+import com.bsuir.inforetrsys.view.MainAlert;
 import com.bsuir.inforetrsys.view.SearchResultsWindow;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.impl.InformationTextReader;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.util.List;
 
@@ -39,24 +40,37 @@ public class MainController {
     private TextField queryField;
 
     @FXML
+    private TextField minRankField;
+
+    @FXML
     private void controlSearch() {
         try {
             String query = queryField.getText();
-            if (query == null) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error");
-                alert.setContentText("Query is not entered!");
-
-                alert.show();
+            if (query.isEmpty()) {
+                new MainAlert().show("Query is not entered!");
                 return;
             }
 
-            List<SearchResult> searchResults = querySearcher.search(query, 0.5);
+            String minRankLine = minRankField.getText();
+            double minRank;
+            if (!minRankLine.isEmpty()) {
+                minRank = Double.parseDouble(minRankLine);
+            } else {
+                minRank = 0;
+            }
+
+            List<SearchResult> searchResults = querySearcher.search(query, minRank);
 
             new SearchResultsWindow(searchResults).show();
         } catch (QuerySearchingProblemsException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void controlButtonPressed(KeyEvent event) {
+        if (KeyCode.ENTER.equals(event.getCode())) {
+            controlSearch();
         }
     }
 }

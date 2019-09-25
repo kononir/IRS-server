@@ -20,6 +20,7 @@ import com.epam.info.handling.data.parser.builder.impl.ParserChainBuilder;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.impl.InformationTextReader;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,6 +29,7 @@ import javafx.stage.Stage;
 public class Runner extends Application {
     private static final String APP_PROPERTIES_FILE_PATH = "app.properties";
     private static final String FXML_FILE_PATH = "main.fxml";
+    private static final String STYLE_FILE_PATH = "style/main.css";
 
     private static ServerDirector director;
 
@@ -55,10 +57,14 @@ public class Runner extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(FXML_FILE_PATH));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Searcher");
-        primaryStage.setOnCloseRequest(event -> director.stop());
+        primaryStage.setOnCloseRequest(event -> {
+            director.stop();
+            Platform.exit();
+        });
         primaryStage.show();
     }
 }

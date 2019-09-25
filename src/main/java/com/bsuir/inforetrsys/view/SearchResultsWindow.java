@@ -1,10 +1,8 @@
 package com.bsuir.inforetrsys.view;
 
 import com.bsuir.inforetrsys.entity.SearchResult;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
@@ -14,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class SearchResultsWindow {
+    private static final String STYLE_FILE_PATH = "style/main.css";
     private List<SearchResult> searchResults;
 
     public SearchResultsWindow(List<SearchResult> searchResults) {
@@ -21,49 +20,48 @@ public class SearchResultsWindow {
     }
 
     public void show() {
-        Button backButton = new Button("Back");
-        backButton.setCancelButton(true);
-        backButton.setId("back-to-search-button");
-        StackPane.setAlignment(backButton, Pos.TOP_LEFT);
-        StackPane.setMargin(backButton, new Insets(5));
+        GridPane resultsGridPane = new GridPane();
+        resultsGridPane.setAlignment(Pos.TOP_CENTER);
+        resultsGridPane.setId("results-grid-pane");
 
-        VBox resultsVBox = new VBox();
-        //resultsVBox.autosize();
-        //resultsVBox.setFillWidth(true);
-        resultsVBox.setSpacing(10);
-        resultsVBox.setId("results-pane");
+        resultsGridPane.getColumnConstraints().add(new ColumnConstraints(350, 1000, 1000));
+        resultsGridPane.getColumnConstraints().add(new ColumnConstraints(100));
 
+        int rowIndex = 0;
         for (SearchResult searchResult : searchResults) {
             Label titleLabel = new Label(searchResult.getTitle());
-            Label snippetLabel = new Label(searchResult.getSnippet());
+            titleLabel.setId("title-label");
+            Label snippetLabel = new Label(searchResult.getAddingTime().format(DateTimeFormatter.ISO_LOCAL_DATE)
+                    + " : " + searchResult.getSnippet());
             snippetLabel.setId("snippet-label");
             Label filePathLabel = new Label(searchResult.getFilePath());
-            Label addingTimeLabel = new Label(searchResult.getAddingTime().format(DateTimeFormatter.ISO_LOCAL_DATE));
-            addingTimeLabel.setId("adding-time-label");
+            filePathLabel.setId("file-path-label");
 
-            VBox resultVBox = new VBox(titleLabel, snippetLabel, filePathLabel, addingTimeLabel);
+            VBox resultVBox = new VBox(titleLabel, filePathLabel, snippetLabel);
 
-            Label rankLabel = new Label(String.valueOf(searchResult.getRank()));
+            Label rankLabel = new Label("Rank - " + searchResult.getRank());
             rankLabel.setId("rank-label");
 
-            HBox resultHBox = new HBox(resultVBox, rankLabel);
-            resultVBox.setSpacing(2);
+            resultsGridPane.add(resultVBox, 0, rowIndex);
+            resultsGridPane.add(rankLabel, 1, rowIndex);
 
-            resultsVBox.getChildren().addAll(resultHBox);
+            rowIndex++;
         }
 
-        ScrollPane scrollPane = new ScrollPane(resultsVBox);
+        ScrollPane scrollPane = new ScrollPane(resultsGridPane);
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
         StackPane.setAlignment(scrollPane, Pos.CENTER);
-        StackPane.setMargin(scrollPane, new Insets(10));
 
         Pane root = new StackPane();
-        root.getChildren().addAll(backButton, scrollPane);
+        root.setId("root-pane");
+        root.getChildren().addAll(scrollPane);
 
-        Scene scene = new Scene(root, 400, 600);
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
 
         Stage stage = new Stage();
+        stage.setTitle("Search results");
         stage.setScene(scene);
         stage.show();
     }

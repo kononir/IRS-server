@@ -2,6 +2,7 @@
   <dictionary name="Vlad">
     <words>
       <w>bsuir</w>
+      <w>hbox</w>
       <w>inforetrsys</w>
       <w>lemm</w>
       <w>limonad</w>
@@ -10,6 +11,7 @@
       <w>stopword</w>
       <w>stopwords</w>
       <w>transportations</w>
+      <w>vbox</w>
     </words>
   </dictionary>
 </component>

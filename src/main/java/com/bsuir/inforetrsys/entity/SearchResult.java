@@ -2,7 +2,7 @@ package com.bsuir.inforetrsys.entity;
 
 import java.time.LocalDateTime;
 
-public class SearchResult {
+public class SearchResult implements Comparable<SearchResult> {
     private String title;
     private String snippet;
     private double rank;
@@ -35,5 +35,10 @@ public class SearchResult {
 
     public LocalDateTime getAddingTime() {
         return addingTime;
+    }
+
+    @Override
+    public int compareTo(SearchResult o) {
+        return Double.compare(this.rank, o.rank);
     }
 }

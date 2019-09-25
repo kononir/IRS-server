@@ -3,14 +3,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<VBox xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.bsuir.inforetrsys.MainController"
-      prefHeight="400.0" prefWidth="600.0"
-      spacing="10"
-      alignment="CENTER">
-    <Label alignment="TOP_CENTER">
-        Type query here
-    </Label>
-    <TextField fx:id="queryField" alignment="CENTER"/>
-    <Button text="Search" onAction="#controlSearch" alignment="BOTTOM_CENTER"/>
-</VBox>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.bsuir.inforetrsys.MainController"
+           id="root-pane">
+    <HBox id="min-rank-hbox">
+        <Label text="Min rank:"/>
+        <TextField fx:id="minRankField"
+                   id="min-rank-field"/>
+    </HBox>
+    <VBox id="search-vbox"
+          alignment="CENTER">
+        <Label text="Type query here" alignment="TOP_CENTER"/>
+        <TextField fx:id="queryField"
+                   id="query-field"
+                   onKeyPressed="#controlButtonPressed"
+                   alignment="CENTER"/>
+        <Button text="Search"
+                onAction="#controlSearch"
+                onKeyPressed="#controlButtonPressed"
+                alignment="BOTTOM_CENTER"/>
+    </VBox>
+</StackPane>
