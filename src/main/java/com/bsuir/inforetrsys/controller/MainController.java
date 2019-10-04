@@ -24,9 +24,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class MainController {
+    private static final int MILLIS_FROM_NANO = 1000000;
+
     private static DocumentParser documentParser = new AdaptiveDocumentParser(new QueryParserChainBuilder().build());
     private static KeywordService keywordService = new KeywordServiceImpl();
     private static StopwordService stopwordService = new StopwordServiceImpl();
@@ -59,9 +62,11 @@ public class MainController {
                 minRank = 0;
             }
 
+            int timeBeforeSearch = LocalDateTime.now().getNano() / MILLIS_FROM_NANO;
             List<SearchResult> searchResults = querySearcher.search(query, minRank);
+            int timeAfterSearch = LocalDateTime.now().getNano() / MILLIS_FROM_NANO;
 
-            new SearchResultsWindow(searchResults).show();
+            new SearchResultsWindow(searchResults, timeAfterSearch - timeBeforeSearch).show();
         } catch (QuerySearchingProblemsException e) {
             e.printStackTrace();
         }

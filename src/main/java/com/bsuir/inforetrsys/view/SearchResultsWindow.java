@@ -26,9 +26,11 @@ public class SearchResultsWindow {
     SearchResultsController controller = new SearchResultsController();
 
     private List<SearchResult> searchResults;
+    private int searchingTime;
 
-    public SearchResultsWindow(List<SearchResult> searchResults) {
+    public SearchResultsWindow(List<SearchResult> searchResults, int searchingTime) {
         this.searchResults = searchResults;
+        this.searchingTime = searchingTime;
     }
 
     public void show() {
@@ -55,10 +57,12 @@ public class SearchResultsWindow {
             }
         });
 
-        Button showHelp = new Button("Show help");
+        Button showHelpButton = new Button("Show help");
 
-        HBox buttonsHBox = new HBox(showMetricsTableButton, showHelp);
+        HBox buttonsHBox = new HBox(showMetricsTableButton, showHelpButton);
         buttonsHBox.setId("buttons-hbox");
+
+        Label searchingTimeLabel = new Label("Searching time: " + searchingTime + " ms");
 
         GridPane resultsGridPane = new GridPane();
         resultsGridPane.setAlignment(Pos.TOP_CENTER);
@@ -88,15 +92,15 @@ public class SearchResultsWindow {
             rowIndex++;
         }
 
-        ScrollPane scrollPane = new ScrollPane(resultsGridPane);
-        scrollPane.setFitToHeight(true);
-        scrollPane.setFitToWidth(true);
-        StackPane.setAlignment(scrollPane, Pos.CENTER);
+        ScrollPane resultsScrollPane = new ScrollPane(resultsGridPane);
+        resultsScrollPane.setFitToHeight(true);
+        resultsScrollPane.setFitToWidth(true);
+        StackPane.setAlignment(resultsScrollPane, Pos.CENTER);
 
         VBox root = new VBox();
         root.setId("root-pane");
-        root.getChildren().addAll(buttonsHBox, scrollPane);
-        VBox.setVgrow(scrollPane, Priority.ALWAYS);
+        root.getChildren().addAll(buttonsHBox, searchingTimeLabel, resultsScrollPane);
+        VBox.setVgrow(resultsScrollPane, Priority.ALWAYS);
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
