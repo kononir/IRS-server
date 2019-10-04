@@ -1,18 +1,30 @@
 package com.bsuir.inforetrsys.view;
 
+import com.bsuir.inforetrsys.controller.ControllerException;
+import com.bsuir.inforetrsys.controller.MetricsController;
+import com.bsuir.inforetrsys.controller.SearchResultsController;
 import com.bsuir.inforetrsys.entity.SearchResult;
+import com.bsuir.inforetrsys.entity.table.ClassificationMatrixData;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class SearchResultsWindow {
+    private static final String METRICS_FXML_FILE_PATH = "view/metrics.fxml";
     private static final String STYLE_FILE_PATH = "style/main.css";
+
+    SearchResultsController controller = new SearchResultsController();
+
     private List<SearchResult> searchResults;
 
     public SearchResultsWindow(List<SearchResult> searchResults) {
@@ -20,6 +32,34 @@ public class SearchResultsWindow {
     }
 
     public void show() {
+        Button showMetricsTableButton = new Button("Show metrics table");
+        showMetricsTableButton.setOnAction(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource(METRICS_FXML_FILE_PATH));
+                Parent root = loader.load();
+
+                MetricsController metricsController = loader.getController();
+                List<ClassificationMatrixData> dataList = controller.controlFindingMatrixData(searchResults);
+                metricsController.setClassificationMatrixData(dataList);
+                metricsController.setMetricsData(controller.controlComputingMetrics(dataList));
+
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
+
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException | ControllerException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Button showHelp = new Button("Show help");
+
+        HBox buttonsHBox = new HBox(showMetricsTableButton, showHelp);
+        buttonsHBox.setId("buttons-hbox");
+
         GridPane resultsGridPane = new GridPane();
         resultsGridPane.setAlignment(Pos.TOP_CENTER);
         resultsGridPane.setId("results-grid-pane");
@@ -53,9 +93,10 @@ public class SearchResultsWindow {
         scrollPane.setFitToWidth(true);
         StackPane.setAlignment(scrollPane, Pos.CENTER);
 
-        Pane root = new StackPane();
+        VBox root = new VBox();
         root.setId("root-pane");
-        root.getChildren().addAll(scrollPane);
+        root.getChildren().addAll(buttonsHBox, scrollPane);
+        VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());

@@ -1,6 +1,6 @@
 package com.bsuir.inforetrsys.logic.searcher;
 
-import com.bsuir.inforetrsys.api.logic.SnippetSearcher;
+import com.bsuir.inforetrsys.api.logic.searcher.SnippetSearcher;
 
 import java.util.ArrayList;
 import java.util.List;

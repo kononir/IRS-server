@@ -1,14 +1,14 @@
 package com.bsuir.inforetrsys.logic.searcher;
 
-import com.bsuir.inforetrsys.api.logic.QuerySearcher;
-import com.bsuir.inforetrsys.api.logic.SnippetSearcher;
+import com.bsuir.inforetrsys.api.logic.searcher.QuerySearcher;
+import com.bsuir.inforetrsys.api.logic.searcher.SnippetSearcher;
 import com.bsuir.inforetrsys.api.service.DocumentService;
 import com.bsuir.inforetrsys.api.service.KeywordService;
 import com.bsuir.inforetrsys.api.service.StopwordService;
 import com.bsuir.inforetrsys.entity.Keyword;
 import com.bsuir.inforetrsys.entity.SearchResult;
 import com.bsuir.inforetrsys.entity.TextDocument;
-import com.bsuir.inforetrsys.api.data.WordsParser;
+import com.bsuir.inforetrsys.api.data.DocumentParser;
 import com.epam.cafe.service.ServiceException;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.exception.InvalidPathException;
@@ -18,16 +18,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class LogicSearcher implements QuerySearcher {
-    private WordsParser wordsParser;
+    private DocumentParser documentParser;
     private KeywordService keywordService;
     private StopwordService stopwordService;
     private DocumentService documentService;
     private TextReader documentReader;
     private SnippetSearcher snippetSearcher;
 
-    public LogicSearcher(WordsParser wordsParser, KeywordService keywordService, StopwordService stopwordService,
+    public LogicSearcher(DocumentParser documentParser, KeywordService keywordService, StopwordService stopwordService,
                          DocumentService documentService, TextReader documentReader, SnippetSearcher snippetSearcher) {
-        this.wordsParser = wordsParser;
+        this.documentParser = documentParser;
         this.keywordService = keywordService;
         this.stopwordService = stopwordService;
         this.documentService = documentService;
@@ -41,7 +41,7 @@ public class LogicSearcher implements QuerySearcher {
         int queryKeywordsNumber;
 
         try {
-            List<String> queryKeywordValues = wordsParser.parse(query);
+            List<String> queryKeywordValues = documentParser.parse(query);
             queryKeywordsNumber = queryKeywordValues.size();
             for (String queryKeywordValue : queryKeywordValues) {
                 String lowerCaseQueryKeywordValue = queryKeywordValue.toLowerCase();

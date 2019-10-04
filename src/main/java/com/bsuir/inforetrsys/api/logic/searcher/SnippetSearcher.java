@@ -1,4 +1,4 @@
-package com.bsuir.inforetrsys.api.logic;
+package com.bsuir.inforetrsys.api.logic.searcher;
 
 import java.util.List;
 

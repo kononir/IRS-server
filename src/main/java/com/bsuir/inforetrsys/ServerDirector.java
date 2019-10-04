@@ -1,5 +1,6 @@
 package com.bsuir.inforetrsys;
 
+import com.bsuir.inforetrsys.api.data.DocumentParser;
 import com.bsuir.inforetrsys.entity.TextDocument;
 import com.bsuir.inforetrsys.api.logic.Indexer;
 import com.bsuir.inforetrsys.api.data.FileSearcher;
@@ -25,6 +26,7 @@ public class ServerDirector {
     private TextReader propertyReader;
     private FileSearcher fileSearcher;
     private TextReader documentReader;
+    private DocumentParser documentParser;
     private Indexer indexer;
 
     ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1);
@@ -32,11 +34,12 @@ public class ServerDirector {
     private static final Logger INFO_LOGGER = LogManager.getLogger(ServerDirector.class);
     private static final Logger ERROR_LOGGER = LogManager.getLogger();
 
-    public ServerDirector(TextReader propertyReader, FileSearcher fileSearcher,
-                          TextReader documentReader, Indexer indexer) {
+    public ServerDirector(TextReader propertyReader, FileSearcher fileSearcher, TextReader documentReader,
+                          DocumentParser documentParser, Indexer indexer) {
         this.propertyReader = propertyReader;
         this.fileSearcher = fileSearcher;
         this.documentReader = documentReader;
+        this.documentParser = documentParser;
         this.indexer = indexer;
     }
 
@@ -62,12 +65,16 @@ public class ServerDirector {
                     for (File newFile : newFiles) {
                         INFO_LOGGER.info("Found '" + newFile.getAbsolutePath() + "'");
 
+                        String documentText = documentReader.read(newFile.getAbsolutePath());
+                        INFO_LOGGER.info("Document read");
+
                         documents.add(new TextDocument(
-                                newFile.getName(),
-                                documentReader.read(newFile.getAbsolutePath()),
+                                documentParser.parseTitle(documentText),
+                                documentParser.parse(documentText),
                                 LocalDateTime.now(),
                                 newFile.getAbsolutePath()
                         ));
+                        INFO_LOGGER.info("Document parsed");
                     }
 
                     INFO_LOGGER.info("Index new documents");

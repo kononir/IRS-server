@@ -1,12 +1,12 @@
-package com.bsuir.inforetrsys;
+package com.bsuir.inforetrsys.controller;
 
-import com.bsuir.inforetrsys.api.data.WordsParser;
-import com.bsuir.inforetrsys.api.logic.QuerySearcher;
-import com.bsuir.inforetrsys.api.logic.SnippetSearcher;
+import com.bsuir.inforetrsys.api.data.DocumentParser;
+import com.bsuir.inforetrsys.api.logic.searcher.QuerySearcher;
+import com.bsuir.inforetrsys.api.logic.searcher.SnippetSearcher;
 import com.bsuir.inforetrsys.api.service.DocumentService;
 import com.bsuir.inforetrsys.api.service.KeywordService;
 import com.bsuir.inforetrsys.api.service.StopwordService;
-import com.bsuir.inforetrsys.data.parser.AdaptiveWordsParser;
+import com.bsuir.inforetrsys.data.parser.AdaptiveDocumentParser;
 import com.bsuir.inforetrsys.data.parser.QueryParserChainBuilder;
 import com.bsuir.inforetrsys.entity.SearchResult;
 import com.bsuir.inforetrsys.logic.searcher.LogicSearcher;
@@ -27,13 +27,13 @@ import javafx.scene.input.KeyEvent;
 import java.util.List;
 
 public class MainController {
-    private static WordsParser wordsParser = new AdaptiveWordsParser(new QueryParserChainBuilder().build());
+    private static DocumentParser documentParser = new AdaptiveDocumentParser(new QueryParserChainBuilder().build());
     private static KeywordService keywordService = new KeywordServiceImpl();
     private static StopwordService stopwordService = new StopwordServiceImpl();
     private static DocumentService documentService = new DocumentServiceImpl();
     private static TextReader documentReader = new InformationTextReader();
     private static SnippetSearcher snippetSearcher = new SnippetSearcherImpl();
-    private static QuerySearcher querySearcher = new LogicSearcher(wordsParser, keywordService, stopwordService,
+    private static QuerySearcher querySearcher = new LogicSearcher(documentParser, keywordService, stopwordService,
             documentService, documentReader, snippetSearcher);
 
     @FXML
@@ -72,5 +72,10 @@ public class MainController {
         if (KeyCode.ENTER.equals(event.getCode())) {
             controlSearch();
         }
+    }
+
+    @FXML
+    private void controlShowingHelp() {
+
     }
 }

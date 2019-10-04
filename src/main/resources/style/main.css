@@ -2,9 +2,6 @@
     -fx-pref-height: 400px;
     -fx-pref-width: 600px;
     -fx-font-size: 15px;
-}
-
-#search-vbox {
     -fx-spacing: 10px;
 }
 
@@ -22,6 +19,10 @@
 }
 
 /* search results window */
+#buttons-hbox {
+    -fx-spacing: 10px;
+}
+
 #results-grid-pane {
     -fx-padding: 10px;
     -fx-hgap: 10px;

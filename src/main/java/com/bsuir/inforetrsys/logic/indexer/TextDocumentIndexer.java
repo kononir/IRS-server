@@ -6,7 +6,6 @@ import com.bsuir.inforetrsys.api.service.StopwordService;
 import com.bsuir.inforetrsys.entity.Keyword;
 import com.bsuir.inforetrsys.entity.TextDocument;
 import com.bsuir.inforetrsys.api.logic.Indexer;
-import com.bsuir.inforetrsys.api.data.WordsParser;
 import com.epam.cafe.service.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,16 +16,14 @@ import java.util.stream.Collectors;
 public class TextDocumentIndexer implements Indexer {
     private static final int THIS_DOCUMENT = 1;
 
-    private WordsParser wordsParser;
     private DocumentService documentService;
     private KeywordService keywordService;
     private StopwordService stopwordService;
 
     private static final Logger LOGGER = LogManager.getLogger(TextDocumentIndexer.class);
 
-    public TextDocumentIndexer(WordsParser wordsParser, DocumentService documentService,
+    public TextDocumentIndexer(DocumentService documentService,
                                KeywordService keywordService, StopwordService stopwordService) {
-        this.wordsParser = wordsParser;
         this.documentService = documentService;
         this.keywordService = keywordService;
         this.stopwordService = stopwordService;
@@ -37,12 +34,10 @@ public class TextDocumentIndexer implements Indexer {
         try {
             LOGGER.info("Index document '" + document.getTitle() + "'");
 
-            List<String> allWordsValues = wordsParser.parse(document.getText());
-            LOGGER.info("Document parsed");
-
             int documentsNumber = documentService.getDocumentsNumber() + THIS_DOCUMENT;
             LOGGER.info("Search document keywords");
-            List<String> keywordValues = getKeywordValues(allWordsValues, minWeight, maxWeight, documentsNumber);
+            List<String> keywordValues
+                    = getKeywordValues(document.getWordsValues(), minWeight, maxWeight, documentsNumber);
 
             documentService.saveDocument(document);
             LOGGER.info("Document added");

@@ -3,13 +3,13 @@ package com.bsuir.inforetrsys;
 import com.bsuir.inforetrsys.api.service.DocumentService;
 import com.bsuir.inforetrsys.api.service.KeywordService;
 import com.bsuir.inforetrsys.api.service.StopwordService;
-import com.bsuir.inforetrsys.data.parser.AdaptiveWordsParser;
+import com.bsuir.inforetrsys.data.parser.AdaptiveDocumentParser;
 import com.bsuir.inforetrsys.service.DocumentServiceImpl;
 import com.bsuir.inforetrsys.service.KeywordServiceImpl;
 import com.bsuir.inforetrsys.service.StopwordServiceImpl;
 import com.bsuir.inforetrsys.api.data.FileSearcher;
 import com.bsuir.inforetrsys.api.logic.Indexer;
-import com.bsuir.inforetrsys.api.data.WordsParser;
+import com.bsuir.inforetrsys.api.data.DocumentParser;
 import com.bsuir.inforetrsys.logic.indexer.TextDocumentIndexer;
 import com.bsuir.inforetrsys.data.reader.FileType;
 import com.bsuir.inforetrsys.data.reader.PropertyReader;
@@ -28,7 +28,7 @@ import javafx.stage.Stage;
 
 public class Runner extends Application {
     private static final String APP_PROPERTIES_FILE_PATH = "app.properties";
-    private static final String FXML_FILE_PATH = "main.fxml";
+    private static final String MAIN_FXML_FILE_PATH = "view/main.fxml";
     private static final String STYLE_FILE_PATH = "style/main.css";
 
     private static ServerDirector director;
@@ -41,13 +41,13 @@ public class Runner extends Application {
 
         ChainBuilder<Parser> chainBuilder = new ParserChainBuilder();
         Parser parser = chainBuilder.build();
-        WordsParser wordsParser = new AdaptiveWordsParser(parser);
+        DocumentParser documentParser = new AdaptiveDocumentParser(parser);
 
         KeywordService keywordService = new KeywordServiceImpl();
         StopwordService stopwordService = new StopwordServiceImpl();
-        Indexer indexer = new TextDocumentIndexer(wordsParser,  documentService, keywordService, stopwordService);
+        Indexer indexer = new TextDocumentIndexer(documentService, keywordService, stopwordService);
 
-        director = new ServerDirector(propertyReader, fileSearcher, documentReader, indexer);
+        director = new ServerDirector(propertyReader, fileSearcher, documentReader, documentParser, indexer);
         director.handle();
 
         Application.launch();
@@ -55,7 +55,7 @@ public class Runner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(FXML_FILE_PATH));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(MAIN_FXML_FILE_PATH));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
 

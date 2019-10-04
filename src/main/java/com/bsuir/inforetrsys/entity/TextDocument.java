@@ -1,6 +1,7 @@
 package com.bsuir.inforetrsys.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class TextDocument {
     public static final String ID_COLUMN = "ID";
@@ -10,7 +11,7 @@ public class TextDocument {
 
     private int id;
     private String title;
-    private String text;
+    private List<String> wordsValues;
     private LocalDateTime addingTime;
     private String filePath;
 
@@ -21,9 +22,9 @@ public class TextDocument {
         this.filePath = filePath;
     }
 
-    public TextDocument(String title, String text, LocalDateTime addingTime, String filePath) {
+    public TextDocument(String title, List<String> wordsValues, LocalDateTime addingTime, String filePath) {
         this.title = title;
-        this.text = text;
+        this.wordsValues = wordsValues;
         this.addingTime = addingTime;
         this.filePath = filePath;
     }
@@ -36,8 +37,8 @@ public class TextDocument {
         return title;
     }
 
-    public String getText() {
-        return text;
+    public List<String> getWordsValues() {
+        return wordsValues;
     }
 
     public LocalDateTime getAddingTime() {

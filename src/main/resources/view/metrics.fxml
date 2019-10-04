@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bsuir.inforetrsys.controller.MetricsController"
+      id="root-pane">
+    <TableView fx:id="classificationMatrix" id="table">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="textMatrixColumn"/>
+            <TableColumn fx:id="relevanceMatrixColumn" text="Relevant"/>
+            <TableColumn fx:id="notRelevanceMatrixColumn" text="Not relevant"/>
+        </columns>
+    </TableView>
+    <TableView fx:id="metricsTable" id="table">
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+        <columns>
+            <TableColumn fx:id="recallTableColumn" text="Recall"/>
+            <TableColumn fx:id="precisionTableColumn" text="Precision"/>
+            <TableColumn fx:id="accuracyTableColumn" text="Accuracy"/>
+            <TableColumn fx:id="errorTableColumn" text="Error"/>
+            <TableColumn fx:id="fMeasureTableColumn" text="F-measure"/>
+        </columns>
+    </TableView>
+</VBox>
