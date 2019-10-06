@@ -9,7 +9,8 @@
         <Label text="Min rank:"/>
         <TextField fx:id="minRankField"
                    id="min-rank-field"/>
-        <Button text="Help"/>
+        <Button text="Help"
+                onAction="#controlShowingHelp"/>
     </HBox>
 
     <Label text="Type query here" alignment="TOP_CENTER"/>

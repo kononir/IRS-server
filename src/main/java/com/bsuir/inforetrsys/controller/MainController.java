@@ -20,14 +20,22 @@ import com.bsuir.inforetrsys.view.SearchResultsWindow;
 import com.epam.info.handling.data.reader.TextReader;
 import com.epam.info.handling.data.reader.impl.InformationTextReader;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class MainController {
+    private static final String MAIN_HELP_FXML_FILE_PATH = "view/main_help.fxml";
+    private static final String STYLE_FILE_PATH = "style/main.css";
+
     private static final int MILLIS_FROM_NANO = 1000000;
 
     private static DocumentParser documentParser = new AdaptiveDocumentParser(new QueryParserChainBuilder().build());
@@ -81,6 +89,20 @@ public class MainController {
 
     @FXML
     private void controlShowingHelp() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getClassLoader().getResource(MAIN_HELP_FXML_FILE_PATH));
+            Parent root = loader.load();
 
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
+
+            Stage stage = new Stage();
+            stage.setTitle("Help");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

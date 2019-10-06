@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
 <VBox xmlns="http://javafx.com/javafx"
       id="root-pane" alignment="CENTER">
     <ImageView>
-        <Image url="@/image/main_help.png"/>
+        <Image url="@/image/results_help.png"/>
     </ImageView>
     <Label id="image-annotation">
-        1 - Input min rank of result document
+        1 - Press to show calculated metrics
     </Label>
     <Label id="image-annotation">
         2 - Press to show help
     </Label>
     <Label id="image-annotation">
-        3 - Input search query
+        3 - Time of searching documents by query
     </Label>
     <Label id="image-annotation">
-        4 - Press to search (or press 'ENTER')
+        4 - Results area (1 - title, 2 - path, 3 - snippet, 4 - rank)
     </Label>
 </VBox>

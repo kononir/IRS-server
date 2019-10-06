@@ -1,251 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Wrote new window - metrics (fxml); modify main and results window">
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/META-INF/maven/com.epam.web/epam-cafe/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/META-INF/maven/com.epam.web/epam-cafe/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/FrontServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/Command.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/EntityBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/query/QueryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/query/QueryBuilderWithElementsNumber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/query/QueryBuilderWithParams.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/repository/Repository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/repository/specification/EntitySpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/repository/specification/SqlSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/service/BonusService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/service/DishService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/service/OrderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/util/BonusHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/util/DishHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/util/OrderHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/api/util/UserHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/CommandFactoryException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/factory/CommandFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/factory/CommandType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/AbstractCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/add/AddBonusCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/add/AddDishCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/add/OrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/add/SaveDishOrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/delete/DeleteBonusCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/delete/DeleteDishCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/delete/DeleteOrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/delete/RemoveAllDishOrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/delete/RemoveDishOrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/general/AuthorizeCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/general/ChooseLanguageCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/general/LogoutCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetAllDishesCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetBonusesAbstractCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetBonusesAdminCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetBonusesClientCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetClientMenuCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetClientsCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetCurrentOrdersCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetGlobalOrdersCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/GetPreviousOrdersCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/get/ShowBasketCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/manage/ManageClientsInformationCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/manage/ManageDishInformationCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/specify/SpecifyNewBonusCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/specify/SpecifyNewDishCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/update/LeaveCommentCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/update/RateOrderCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/update/SaveClientChangesCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/command/impl/update/SaveDishChangesCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/connection/ConnectionFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/connection/pool/ConnectionPool.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/connection/pool/ConnectionPoolException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/Account.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/Bonus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/Dish.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/AccountBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/BonusBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/DishBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/OrderBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/OrderDishBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/builder/UserBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/order/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/order/OrderDish.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/order/PaymentMethod.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/user/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/entitie/user/UserRole.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/filter/CharsetFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/page/Language.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/page/NavigationWay.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/property/PropertyReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/property/PropertyReaderException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/query/DeleteQueryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/query/InsertQueryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/query/SelectIDInQueryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/query/UpdateQueryBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/RepositoryException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/RepositoryFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/AbstractRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/AccountRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/BonusRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/ChosenDishesRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/DishRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/OrderRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/impl/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/account/AccountByIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/bonus/BonusByUserIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/bonus/BonusByUserIDWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/bonus/LastBonusSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/choosen/dishes/ChosenDishesByOrderIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/AllDishesSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/AllDishesWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/DishByIDsSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/DishByInMenuSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/DishByInMenuWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/dish/LastDishSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/CurrentOrderByUserIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/CurrentOrderByUserIDWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/GlobalOrderByUserIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/GlobalOrderByUserIDWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/PreviousOrderByUserIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/order/PreviousOrderByUserIDWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/user/UserByIDSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/user/UserByIDsSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/user/UserByLoginAndPasswordSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/user/UserByRoleSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/repository/specification/user/UserByRoleWithLimitSpecification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/service/ServiceException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/service/impl/BonusServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/service/impl/DishServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/tag/PaginatorTag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/util/BonusHelperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/util/DishHelperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/util/OrderHelperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/com/epam/cafe/util/UserHelperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_error_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_error_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_error_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/admin_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/all_dishes_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/all_dishes_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/all_dishes_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonus_adding_form_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonus_adding_form_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonus_adding_form_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonuses_table_admin_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonuses_table_admin_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/bonuses_table_admin_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/client_managing_form_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/client_managing_form_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/client_managing_form_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_adding_form_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_adding_form_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_adding_form_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_form_fields_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_form_fields_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_form_fields_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_managing_form_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_managing_form_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/dish_managing_form_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/left_panel_admin_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/left_panel_admin_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/left_panel_admin_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/user_table_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/user_table_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/administrator/user_table_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/basket_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/basket_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/basket_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/bonuses_table_client_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/bonuses_table_client_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/bonuses_table_client_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_error_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_error_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_error_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_menu_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_menu_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_menu_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/client_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/current_orders_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/current_orders_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/current_orders_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/empty_client_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/empty_client_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/empty_client_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/global_orders_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/global_orders_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/global_orders_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/left_panel_client_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/left_panel_client_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/left_panel_client_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/previous_orders_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/previous_orders_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/previous_orders_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/success_client_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/success_client_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/client/success_client_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/footer_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/footer_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/footer_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/top_panel_be_BY.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/top_panel_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/locale/general/top_panel_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/epam-cafe-1.0-SNAPSHOT-classes.jar/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/META-INF/maven/com.epam/information-handling/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/META-INF/maven/com.epam/information-handling/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/Director.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/composite/Component.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/composite/impl/Composite.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/composite/impl/lexeme/Lexeme.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/composite/impl/lexeme/LexemeType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/Parser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/builder/ChainBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/builder/impl/ParserChainBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/impl/AbstractParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/impl/LexemeParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/impl/ParagraphParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/impl/SentenceParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/parser/impl/TextParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/reader/TextReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/reader/exception/InvalidPathException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/reader/exception/ReadingException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/reader/impl/InformationTextReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/recovery/RecoveryExecutor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/recovery/exception/TextRecoveryInvalidLexemeValueException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/data/recovery/impl/TextRecoveryExecutor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/ExpressionInterpreter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/context/Context.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/context/IntegerContext.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/exception/InvalidExpressionParserException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/exception/InvalidExpressionTextException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/AbstractExpression.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/NonTerminalExpressionNumber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/TerminalExpressionAdd.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/TerminalExpressionDivide.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/TerminalExpressionMultiply.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/TerminalExpressionPow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/impl/TerminalExpressionSubtract.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/parser/ExpressionParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/expression/parser/impl/ArithmeticExpressionParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/interpreter/impl/ArithmeticExpressionInterpreter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/Sorter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/comporator/CompositeChildrenNumberComparator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/comporator/LexemeLengthComparator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/comporator/LexemeSymbolOccurrenceOrAlphabeticallyComparator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/impl/LexemeSorterBySymbolOccurrenceOrAlphabetically.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/impl/ParagraphSorterBySentenceNumber.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/com/epam/info/handling/logic/sorter/impl/WordSorterByLength.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/libs/information-handling-1.0-SNAPSHOT.jar/log4j2.xml" afterDir="false" />
+    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Added time showing in results window">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/main_help.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/results_help.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/results_help.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/SearchResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/SearchResultsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/main_help.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/main_help.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -305,9 +72,9 @@
       <list>
         <option value="CSS File" />
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -336,7 +103,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/image" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -353,16 +120,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My Programs\Information retrieval system\src\main\lib" />
-      <recent name="D:\My Programs\Information retrieval system" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Programs\Information retrieval system\src\main\resources\view" />
       <recent name="D:\My Programs\Information retrieval system" />
       <recent name="D:\My Programs\Information retrieval system\src\main\resources" />
       <recent name="D:\My Programs\Information retrieval system\src\main\db_scripts\create" />
       <recent name="D:\My Programs\Information retrieval system\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Programs\Information retrieval system\src\main\resources\image" />
+      <recent name="D:\My Programs\Information retrieval system\src\main\lib" />
+      <recent name="D:\My Programs\Information retrieval system" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -428,7 +196,10 @@
       <workItem from="1569835406529" duration="4620000" />
       <workItem from="1569840231985" duration="29000" />
       <workItem from="1570102456923" duration="20299000" />
-      <workItem from="1570182565337" duration="2785000" />
+      <workItem from="1570182565337" duration="3386000" />
+      <workItem from="1570200991499" duration="415000" />
+      <workItem from="1570215561949" duration="817000" />
+      <workItem from="1570377226906" duration="7065000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -507,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570184552198</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added time showing in results window">
+      <created>1570185527114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1570185527114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +317,8 @@
     <MESSAGE value="Added search results window, logging to indexer part; solved problems&#10;with indexer (td/idf) and snippet searcher (made case insensitive)" />
     <MESSAGE value="Added styles" />
     <MESSAGE value="Wrote new window - metrics (fxml); modify main and results window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrote new window - metrics (fxml); modify main and results window" />
+    <MESSAGE value="Added time showing in results window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added time showing in results window" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Information_retrieval_system$ClientRunner.ic" NAME="ClientRunner Coverage Results" MODIFIED="1569245116074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

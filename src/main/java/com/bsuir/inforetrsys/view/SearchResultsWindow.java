@@ -21,6 +21,7 @@ import java.util.List;
 
 public class SearchResultsWindow {
     private static final String METRICS_FXML_FILE_PATH = "view/metrics.fxml";
+    private static final String RESULTS_HELP_FXML_FILE_PATH = "view/results_help.fxml";
     private static final String STYLE_FILE_PATH = "style/main.css";
 
     SearchResultsController controller = new SearchResultsController();
@@ -50,6 +51,7 @@ public class SearchResultsWindow {
                 scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
 
                 Stage stage = new Stage();
+                stage.setTitle("Metrics");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException | ControllerException e) {
@@ -58,6 +60,23 @@ public class SearchResultsWindow {
         });
 
         Button showHelpButton = new Button("Show help");
+        showHelpButton.setOnAction(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getClassLoader().getResource(RESULTS_HELP_FXML_FILE_PATH));
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getClassLoader().getResource(STYLE_FILE_PATH).toExternalForm());
+
+                Stage stage = new Stage();
+                stage.setTitle("Help");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         HBox buttonsHBox = new HBox(showMetricsTableButton, showHelpButton);
         buttonsHBox.setId("buttons-hbox");

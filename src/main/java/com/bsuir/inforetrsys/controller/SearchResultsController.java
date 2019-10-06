@@ -26,11 +26,17 @@ public class SearchResultsController {
     public List<ClassificationMatrixData> controlFindingMatrixData(List<SearchResult> searchResults)
             throws ControllerException {
         try {
-            int documentsNum = documentService.getDocumentsNumber();
+            int foundDocumentsNum = searchResults.size();
+            int allDocumentsNum = documentService.getDocumentsNumber();
+            int notFoundDocumentsNum = allDocumentsNum - foundDocumentsNum;
 
             return Arrays.asList(
-                    new ClassificationMatrixData(TextCellEnum.FOUND, searchResults.size(), FOUND_NOT_RELEVANT_NUM),
-                    new ClassificationMatrixData(TextCellEnum.NOT_FOUND, NOT_FOUND_RELEVANT_NUM, documentsNum)
+                    new ClassificationMatrixData(
+                            TextCellEnum.FOUND, foundDocumentsNum, FOUND_NOT_RELEVANT_NUM
+                    ),
+                    new ClassificationMatrixData(
+                            TextCellEnum.NOT_FOUND, NOT_FOUND_RELEVANT_NUM, notFoundDocumentsNum
+                    )
             );
         } catch (ServiceException e) {
             throw new ControllerException(e);

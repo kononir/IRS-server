@@ -3,6 +3,7 @@
     -fx-pref-width: 600px;
     -fx-font-size: 15px;
     -fx-spacing: 10px;
+    -fx-padding: 10px;
 }
 
 #min-rank-hbox {
@@ -50,5 +51,10 @@
 
 #rank-label {
     -fx-font-size: 20px;
+}
+
+/* Help */
+#image-annotation {
+    -fx-max-width: 400px;
 }
 
