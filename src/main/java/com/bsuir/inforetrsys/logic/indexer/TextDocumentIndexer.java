@@ -82,10 +82,10 @@ public class TextDocumentIndexer implements Indexer {
         Map<String, Double> wordsWithTDIDFWeights = new HashMap<>();
         for (Map.Entry<String, Double> entry : wordsWithWeights.entrySet()) {
             String wordValue = entry.getKey();
-            Double wordWeight = entry.getValue() / tdDenominator;
-            wordsWithTDIDFWeights.put(wordValue, wordWeight);
+            Double normalizedWordWeight = entry.getValue() / tdDenominator;
+            wordsWithTDIDFWeights.put(wordValue, normalizedWordWeight);
 
-            LOGGER.info("Found word '" + wordValue + "' with weight - " + wordWeight);
+            LOGGER.info("Found word '" + wordValue + "' with weight - " + normalizedWordWeight);
         }
         return wordsWithTDIDFWeights;
     }

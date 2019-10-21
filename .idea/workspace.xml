@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="Added time showing in results window">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/main_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/results_help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/results_help.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="3d987806-b778-481e-8658-2980cc935276" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/SearchResultsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/controller/SearchResultsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/indexer/TextDocumentIndexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/logic/searcher/LogicSearcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/inforetrsys/view/SearchResultsWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/main_help.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/main_help.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,17 +113,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Programs\Information retrieval system\src\main\resources\image" />
+      <recent name="D:\My Programs\Information retrieval system\src\main\lib" />
+      <recent name="D:\My Programs\Information retrieval system" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Programs\Information retrieval system\src\main\resources\view" />
       <recent name="D:\My Programs\Information retrieval system" />
       <recent name="D:\My Programs\Information retrieval system\src\main\resources" />
       <recent name="D:\My Programs\Information retrieval system\src\main\db_scripts\create" />
       <recent name="D:\My Programs\Information retrieval system\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My Programs\Information retrieval system\src\main\resources\image" />
-      <recent name="D:\My Programs\Information retrieval system\src\main\lib" />
-      <recent name="D:\My Programs\Information retrieval system" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -199,7 +192,16 @@
       <workItem from="1570182565337" duration="3386000" />
       <workItem from="1570200991499" duration="415000" />
       <workItem from="1570215561949" duration="817000" />
-      <workItem from="1570377226906" duration="7065000" />
+      <workItem from="1570377226906" duration="8733000" />
+      <workItem from="1570394986322" duration="7287000" />
+      <workItem from="1570617883900" duration="17432000" />
+      <workItem from="1570652667409" duration="576000" />
+      <workItem from="1571043033593" duration="2031000" />
+      <workItem from="1571055184196" duration="26000" />
+      <workItem from="1571406679230" duration="883000" />
+      <workItem from="1571464677241" duration="28000" />
+      <workItem from="1571568154006" duration="3479000" />
+      <workItem from="1571658150173" duration="1852000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568580169198</created>
@@ -285,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570185527114</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Wrote help for main and results windows; fixed metrics matrix value">
+      <created>1570386456711</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570386456711</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +327,8 @@
     <MESSAGE value="Added styles" />
     <MESSAGE value="Wrote new window - metrics (fxml); modify main and results window" />
     <MESSAGE value="Added time showing in results window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added time showing in results window" />
+    <MESSAGE value="Wrote help for main and results windows; fixed metrics matrix value" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote help for main and results windows; fixed metrics matrix value" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Information_retrieval_system$ClientRunner.ic" NAME="ClientRunner Coverage Results" MODIFIED="1569245116074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

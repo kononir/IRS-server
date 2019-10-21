@@ -15,6 +15,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -97,7 +99,16 @@ public class SearchResultsWindow {
             Label snippetLabel = new Label(searchResult.getAddingTime().format(DateTimeFormatter.ISO_LOCAL_DATE)
                     + " : " + searchResult.getSnippet());
             snippetLabel.setId("snippet-label");
+
+            String path = searchResult.getFilePath();
             Label filePathLabel = new Label(searchResult.getFilePath());
+            filePathLabel.setOnMouseClicked(event -> {
+                try {
+                    Desktop.getDesktop().open(new File(path));
+                } catch (IOException e) {
+                    new MainAlert().show("Unable to open file");
+                }
+            });
             filePathLabel.setId("file-path-label");
 
             VBox resultVBox = new VBox(titleLabel, filePathLabel, snippetLabel);

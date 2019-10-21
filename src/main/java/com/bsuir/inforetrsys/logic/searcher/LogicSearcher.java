@@ -42,7 +42,6 @@ public class LogicSearcher implements QuerySearcher {
 
         try {
             List<String> queryKeywordValues = documentParser.parse(query);
-            queryKeywordsNumber = queryKeywordValues.size();
             for (String queryKeywordValue : queryKeywordValues) {
                 String lowerCaseQueryKeywordValue = queryKeywordValue.toLowerCase();
 
@@ -50,21 +49,24 @@ public class LogicSearcher implements QuerySearcher {
                     List<Keyword> keywords = keywordService.getKeywordRelationsWithValue(lowerCaseQueryKeywordValue);
                     for (Keyword keyword : keywords) {
                         int currDocumentId = keyword.getDocumentId();
+                        String keywordValue = keyword.getValue();
 
-                        List<String> newKeywordValues = new ArrayList<>();
-                        newKeywordValues.add(keyword.getValue());
-
-                        List<String> foundKeywordValues = currResult.putIfAbsent(currDocumentId, newKeywordValues);
+                        List<String> foundKeywordValues = currResult.get(currDocumentId);
                         if (foundKeywordValues != null) {
-                            foundKeywordValues.add(keyword.getValue());
+                            foundKeywordValues.add(keywordValue);
+                        } else {
+                            List<String> newKeywordValues = new ArrayList<>();
+                            newKeywordValues.add(keywordValue);
+                            currResult.put(currDocumentId, newKeywordValues);
                         }
                     }
                 }
             }
 
-            List<SearchResult> searchResultsWithSomeRank
-                    = getSearchResultsWithRankMoreThan(formSearchResults(currResult, queryKeywordsNumber), minRank);
+            queryKeywordsNumber = queryKeywordValues.size();
+            List<SearchResult> searchResults = formSearchResults(currResult, queryKeywordsNumber);
 
+            List<SearchResult> searchResultsWithSomeRank = filterSearchResultsByRank(searchResults, minRank);
             searchResultsWithSomeRank.sort(Collections.reverseOrder());
 
             return searchResultsWithSomeRank;
@@ -100,7 +102,7 @@ public class LogicSearcher implements QuerySearcher {
         return (double) foundKeywordsNumber / (double) queryKeywordsNumber;
     }
 
-    private List<SearchResult> getSearchResultsWithRankMoreThan(List<SearchResult> searchResults, double minRank) {
+    private List<SearchResult> filterSearchResultsByRank(List<SearchResult> searchResults, double minRank) {
         return searchResults.stream()
                 .filter(searchResult -> searchResult.getRank() >= minRank)
                 .collect(Collectors.toList());
